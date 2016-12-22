@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+	<head>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="products.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/gems.css"/>
+	</head>
+	<body ng-controller="StoreController as store" style="width: 500px ; margin-left: auto ;  margin-right: auto ;">
+		<header>
+	      <h1 class="text-center">Flatlander Crafted Gems</h1>
+	      <h2 class="text-center">- an Angular store -</h2>
+	    </header>
+
+	    <div class="list-group span2">
+			<div class="list-group-item" ng-repeat="gem in store.products">
+
+				<h3>
+			        {{gem.name}}
+			        <em class="pull-right">{{gem.price | currency}}</em>
+		      	</h3>
+
+			    <!-- Image Gallery  (defined in app.js as productGallery directive with uses the product-gallery.html template) -->
+		      	<product-gallery></product-gallery>
+
+		      	<product-tabs></product-tabs>
+			</div>
+		</div>
+	</body>
+</html>

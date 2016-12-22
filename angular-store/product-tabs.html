@@ -1,0 +1,28 @@
+<section class="tab">
+    <ul class="nav nav-pills">
+      <li ng-class="{active: tab.isSet(1)}">
+        <a href ng-click="tab.setTab(1)">Description</a></li>
+      <li ng-class="{active: tab.isSet(2)}">
+        <a href ng-click="tab.setTab(2)">Specs</a></li>
+      <li ng-class="{active: tab.isSet(3)}">
+        <a href ng-click="tab.setTab(3)">Reviews</a></li>
+    </ul>
+    <div ng-show="tab.isSet(1)">
+    	<product-description></product-description> <!-- This is a custom directive -->
+    </div>
+    <div ng-show="tab.isSet(2)" product-specs> <!-- Uses the productSpecs directive defined in app.js -->
+    </div>
+    <div ng-show="tab.isSet(3)">
+      	<h4>Reviews</h4>
+      	<li ng-repeat="review in gem.reviews">
+        	<blockquote>
+          	<strong>{{review.stars}} Stars</strong>
+          	{{review.body}}
+          	<cite class="clearfix">- {{review.author}} on {{review.createdOn | date}}</cite>
+        	</blockquote>
+      	</li>
+
+      	<!--  Review Form (this is a custom directive, see review-form.html and reviewForm directive in app.js)-->
+        <review-form></review-form>
+    </div>
+ </section>
