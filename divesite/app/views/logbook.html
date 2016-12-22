@@ -1,0 +1,24 @@
+<p>The Dive Logbook will be displayed here.</p>
+
+<div>
+  <!--<table datatable="" dt-options="logBookCtrl.dtOptions" dt-columns="logBookCtrl.dtColumns" class="row-border hover"></table>-->
+
+  <table datatable="ng" dt-options="logBookCtrl.dtOptions" dt-column-defs="logBookCtrl.dtColumnDefs" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Dive Date Sort</th>
+        <th>Dive Date</th>
+        <th>Location</th>
+        <th>Buddy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="dive in logBookCtrl.diveList">
+        <td>{{ dive.diveDate }}</td>
+        <td>{{ dive.diveDate | date:'dd/MM/yyyy'}}</td>
+        <td>{{ dive.location }}</td>
+        <td>{{ dive.buddy }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

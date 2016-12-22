@@ -1,0 +1,51 @@
+<div class="">
+  <div class="row">
+    <h3>Registration Form:</h3>
+  </div>
+
+  <form id="registerUserForm" class="form-horizontal" ng-submit="registerCtrl.registerUser(user)">
+    <div class="col-lg-6">
+      <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
+      <div class="form-group">
+        <label for="FirstName">First Name</label>
+
+        <div class="input-group">
+          <input type="text" class="form-control" name="InputName" id="FirstName" placeholder="First Name" required=""
+                 ng-model="registerCtrl.user.firstName">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="Surname">Surname</label>
+
+        <div class="input-group">
+          <input type="text" class="form-control" name="InputName" id="Surname" placeholder="Surname" required=""
+                 ng-model="registerCtrl.user.surname">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="InputEmailFirst">Enter Email</label>
+
+        <div class="input-group">
+          <input type="email" class="form-control" id="InputEmailFirst" name="InputEmail" placeholder="Enter Email"
+                 ng-model="registerCtrl.user.email" required="">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="InputEmailSecond">Confirm Email</label>
+
+        <div class="input-group">
+          <input type="email" class="form-control" id="InputEmailSecond" name="InputEmail" placeholder="Confirm Email"
+                 required="">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+        </div>
+      </div>
+      <input type="submit" value="Register" class="btn btn-info pull-right"/>
+
+      <br>
+
+    </div>
+  </form>
+</div>

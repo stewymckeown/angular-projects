@@ -1,0 +1,79 @@
+<div class="">
+    <div class="row">
+        <h2>Log a new dive:</h2>
+    </div>
+
+    <form id="diveForm" class="form-horizontal" ng-submit="logDiveCtrl.saveDive()">
+
+        <div class="row">
+            <input type="submit" class="btn btn-block btn-info">Save Dive</input>
+        </div>
+
+        <br/>
+
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="date">Date:</label>
+                <input id="date" type="date" class="form-control" ng-model="logDiveCtrl.dive.diveDate"/>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="location">Location:</label>
+                <input id="location" type="text" class="form-control" ng-model="logDiveCtrl.dive.location"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="visibility">Visibility (m):</label>
+                <input id="visibility" type="text" class="form-control" ng-model="logDiveCtrl.dive.visibility"/>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="depth">Depth (m):</label>
+                <input id="depth" type="text" class="form-control" ng-model="logDiveCtrl.dive.depth"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="temperature">Temperature (C):</label>
+                <input id="temperature" type="text" class="form-control" ng-model="logDiveCtrl.dive.temperature"/>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="bottomTime">Bottom Time:</label>
+                <input id="bottomTime" type="text" class="form-control" ng-model="logDiveCtrl.dive.bottomTime"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="weight">Weight (kg):</label>
+                <input id="weight" type="text" class="form-control" ng-model="logDiveCtrl.dive.weight"/>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="startPressure">Start psi/bar:</label>
+                <input id="startPressure" type="text" class="form-control" ng-model="logDiveCtrl.dive.startPressure"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-8">
+                <label for="endPressure">End psi/bar:</label>
+                <input id="endPressure" type="text" class="form-control" ng-model="logDiveCtrl.dive.endPressure"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-8">
+                <label for="notes">Notes:</label>
+                <textarea id="notes" rows="4" cols="50" class="form-control"
+                          ng-model="logDiveCtrl.dive.diveNotes">Anything interesting of note?</textarea>
+            </div>
+        </div>
+
+        <input type="hidden" ng-model="logDiveCtrl.dive.userId"/>
+
+        <br>
+
+        <div class="row">
+            <button type="submit" class="btn btn-block btn-info" ng-click="logDiveCtrl.saveDive(logDiveCtrl.dive)">Save Dive</button>
+        </div>
+
+        <br>
+
+    </form>
+</div>
